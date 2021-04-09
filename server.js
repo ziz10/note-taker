@@ -32,37 +32,37 @@ app.route("/api/notes")
     })
 
     
-//     .post(function (req, res) {
-//         let jsonFilePath = path.join(__dirname, "/db/db.json");
-//         let newNote = req.body;
+    .post(function (req, res) {
+        let jsonFilePath = path.join(__dirname, "/db/db.json");
+        let newNote = req.body;
 
         
-//         let highestId = 99;
+        let highestId = 99;
       
-//         for (let i = 0; i < database.length; i++) {
-//             let individualNote = database[i];
+        for (let i = 0; i < database.length; i++) {
+            let individualNote = database[i];
 
-//             if (individualNote.id > highestId) {
+            if (individualNote.id > highestId) {
               
-//                 highestId = individualNote.id;
-//             }
-//         }
+                highestId = individualNote.id;
+            }
+        }
        
-//         newNote.id = highestId + 1;
+        newNote.id = highestId + 1;
       
-//         database.push(newNote)
+        database.push(newNote)
 
    
-//         fs.writeFile(jsonFilePath, JSON.stringify(database), function (err) {
+        fs.writeFile(jsonFilePath, JSON.stringify(database), function (err) {
 
-//             if (err) {
-//                 return console.log(err);
-//             }
-//             console.log("Your note was saved!");
-//         });
+            if (err) {
+                return console.log(err);
+            }
+            console.log("Your note was saved!");
+        });
         
-//         res.json(newNote);
-//     });
+        res.json(newNote);
+    });
 
 
 
