@@ -66,17 +66,17 @@ app.route("/api/notes")
 
 
 
-// app.delete("/api/notes/:id", function (req, res) {
-//     let jsonFilePath = path.join(__dirname, "/db/db.json");
+app.delete("/api/notes/:id", function (req, res) {
+    let jsonFilePath = path.join(__dirname, "/db/db.json");
     
-//     for (let i = 0; i < database.length; i++) {
+    for (let i = 0; i < database.length; i++) {
 
-//         if (database[i].id == req.params.id) {
+        if (database[i].id == req.params.id) {
             
-//             database.splice(i, 1);
-//             break;
-//         }
-//     }
+            database.splice(i, 1);
+            break;
+        }
+    }
     
 //     fs.writeFileSync(jsonFilePath, JSON.stringify(database), function (err) {
 
