@@ -78,17 +78,17 @@ app.delete("/api/notes/:id", function (req, res) {
         }
     }
     
-//     fs.writeFileSync(jsonFilePath, JSON.stringify(database), function (err) {
+    fs.writeFileSync(jsonFilePath, JSON.stringify(database), function (err) {
 
-//         if (err) {
-//             return console.log(err);
-//         } else {
-//             console.log("Your note was deleted!");
-//         }
-//     });
-//     res.json(database);
-// });
+        if (err) {
+            return console.log(err);
+        } else {
+            console.log("Your note was deleted!");
+        }
+    });
+    res.json(database);
+});
 
-// app.listen(PORT, function () {
-//     console.log("App listening on PORT " + PORT);
-// });
+app.listen(PORT, function () {
+    console.log("App listening on PORT " + PORT);
+});
